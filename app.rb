@@ -1,5 +1,8 @@
 #This file was made with the intent of testing some intended functionalities of the app on a very basic level, in order to help in the planning process.  
 
+#File with chord diagrams
+require "./chords.rb"
+
 # "prog" holds all notes. It will be used in conjunction with "i", and the choice between Major and Minor key to define the notes of each key
 # The notes repeat after G#. This was done in order to support the functionality of "i".
 prog = ["A","A#","B","C","C#","D","D#","E","F","F#","G","G#","A","A#","B","C","C#","D","D#","E","F","F#","G"]
@@ -82,33 +85,29 @@ puts ""
 p arr1
 p arr
 
-TEMPLATE = ["  _V__1st Fret ______",
-            "e|---|---|---|---|---|",
-            "B|---|---|---|---|---|",
-            "G|---|---|---|---|---|",
-            "D|---|---|---|---|---|",
-            "A|---|---|---|---|---|",
-            "E|---|---|---|---|---|",]
+# display = arr.map{|y|
+#     arr[y] = Chords.const_get"#{arr[y].capitalize}"
+# }
+# display = []
 
-g = ["      CHORD NAME      ",
-     " ",
-     "  _V__1st Fret ______ ",
-     "e|---|---|[3]|---|---|",
-     "B|---|---|---|---|---|",
-     "G|---|---|---|---|---|",
-     "D|---|---|---|---|---|",
-     "A|---|[1]|---|---|---|",
-     "E|---|---|[2]|---|---|",]
+# y=0
+# while y <= arr.length - 1
 
-a = [g, g, g, g]
+#     arr.each{|chord|
+#         display << Chords::arr[y]
+#     }
+#     puts " "
+#     y += 1
+# end
 
-puts ""
+# puts ""
+display = [Chords::A, Chords::Fm, Chords::B, Chords::C]
 
 x = 0
 
 while x < 10
 
-    a.each{|chord|
+    display.each{|chord|
         print "   " + chord[x].to_s
     }
     puts " "
