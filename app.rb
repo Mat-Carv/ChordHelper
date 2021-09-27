@@ -62,7 +62,7 @@ end
 # "maj_int" and "min_int" define the Major and Minor key note intervals
 maj_int = {"I"=>[prog[i]], "ii"=>[prog[i+2], "m"], "iii"=>[prog[i+4], "m"], "IV"=>[prog[i+5]], "V"=>[prog[i+7]], "vi"=>[prog[i+9], "m"], "vii"=>[prog[i+11], "m"]}
 
-min_int = {"i"=>prog[i], "ii"=>prog[i+2], "III"=>prog[i+3], "iv"=>prog[i+5], "v"=>prog[i+7], "VI"=>prog[i+8], "VII"=>prog[i+10]}
+min_int = {"i"=>[prog[i], "m"], "ii"=>[prog[i+2], "m"], "III"=>[prog[i+3]], "iv"=>[prog[i+5], "m"], "v"=>[prog[i+7], "m"], "VI"=>[prog[i+8]], "VII"=>[prog[i+10]]}
 
 # "arr1" will show the user their chosen progression
 arr1 << progressions[pr.to_sym]
@@ -75,41 +75,40 @@ progressions[pr.to_sym].each{|int|
         arr << maj_int[int][0]
     end
 }
+# version for minor keys
+# progressions[pr.to_sym].each{|int|
+#     if min_int[int][1]   
+#         arr2 << min_int[int][0] + min_int[int][1]
+#     else
+#         arr2 << min_int[int][0]
+#     end
+# }
 
 puts ""
 puts "Root Notes"
-puts maj_int
-puts ""
-puts min_int
-puts ""
 p arr1
+puts " "
 p arr
+puts " "
 
-# display = arr.map{|y|
-#     arr[y] = Chords.const_get"#{arr[y].capitalize}"
-# }
-# display = []
+display = []
 
-# y=0
-# while y <= arr.length - 1
+# Converts the chord names to their respective Symbols in chords.rb 
+arr.map{|x|
+    display << Chords::CHORDS[x.gsub("#", "s").to_sym]
+}
 
-#     arr.each{|chord|
-#         display << Chords::arr[y]
-#     }
-#     puts " "
-#     y += 1
-# end
-
-# puts ""
-display = [Chords::A, Chords::Fm, Chords::B, Chords::C]
+puts ""
 
 x = 0
 
+# Prints the  diagrams line by line, in order to have them display vertically
 while x < 10
-
     display.each{|chord|
         print "   " + chord[x].to_s
     }
     puts " "
     x += 1
 end
+
+Chords::CHORDS[display[x]].to_s
