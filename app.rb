@@ -2,18 +2,15 @@
 
 #File with chord diagrams
 require "./chords.rb"
-
 # "prog" holds all notes. It will be used in conjunction with "i", and the choice between Major and Minor key to define the notes of each key
 # The notes repeat after G#. This was done in order to support the functionality of "i".
 prog = ["A","A#","B","C","C#","D","D#","E","F","F#","G","G#","A","A#","B","C","C#","D","D#","E","F","F#","G"]
-
 # progression options will be separated between Major and Minor, which will be chosen by the user. Only progressions valid to the users choice will be displayed.
 # this hash was made as a means of testing functionality.
 progressions = {a: ["I", "V", "vi", "IV"], 
                 b: ["V", "vi", "IV", "I"],
                 c: ["vi", "IV", "I", "V"],
                 d: ["I", "ii", "iii", "IV", "V", "vi", "vii"]}
-
 # displays progression options neatly
 progressions.each{|key, value|
     puts key.to_s + ". "+ value.to_s
@@ -22,13 +19,12 @@ puts ""
 puts "Choose a Progression"
 pr = gets.chomp
 puts ""
-puts "Choose a Key"
+puts "Choose a Root Note"
 root = gets.downcase.chomp
 
 i = 0
 arr = []
 arr1 =[]
-
 # "i" will define the root note, or in othe words, the first note of the chosen key. Based on which note the user chooses as the root "i" will be set to its corresponding position in prog.
 case root
 when "a"
@@ -67,7 +63,7 @@ min_int = {"i"=>[prog[i], "m"], "ii"=>[prog[i+2], "m"], "III"=>[prog[i+3]], "iv"
 # "arr1" will show the user their chosen progression
 arr1 << progressions[pr.to_sym]
 
-# "arr" will show the user the correspondent root notes to their chosen key + progression
+# "arr" will show the user the correspondent root notes to their                     >>>>>>>>> chosen key + progression <<<<<<<<<<<<
 progressions[pr.to_sym].each{|int|
     if maj_int[int][1]   
         arr << maj_int[int][0] + maj_int[int][1]
@@ -110,5 +106,3 @@ while x < 10
     puts " "
     x += 1
 end
-
-Chords::CHORDS[display[x]].to_s
