@@ -1,10 +1,12 @@
-require "./views/progressions/keys"
-require "./views/progressions/notes"
-require "./views/progressions/progsList"
+require "./controllers/keys"
+require "./controllers/notes"
+require "./controllers/progsList"
+require "./controllers/chord_fetcher"
 
 include Keys
 include Notes
 include ProgsList
+include ChordFetcher
 
 module Views
     module Progressions
@@ -12,10 +14,14 @@ module Views
             system("clear")
             puts "New Chord Progression"
             puts ""
+
             inst.key_type = Keys.choose_key
-            inst.root = Notes.choose_root
             inst.prog = ProgsList.choose_prog inst
-            puts Notes.define_notes inst
+            inst.root = Notes.choose_root
+            inst.chords = Notes.define_notes inst
+            
+            puts "Chord Diagrams"
+            ChordFetcher.fetch_chords inst
         end
 
     end

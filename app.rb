@@ -87,22 +87,23 @@ puts " "
 p arr
 puts " "
 
-display = []
+# MAKE THIS INTO A METHOD
+    display = []
 
-# Converts the chord names to their respective Symbols in chords.rb 
-arr.map{|x|
-    display << Chords::CHORDS[x.gsub("#", "s").to_sym]
-}
-
-puts ""
-
-x = 0
-
-# Prints the  diagrams line by line, in order to have them display vertically
-while x < 10
-    display.each{|chord|
-        print "   " + chord[x].to_s
+    # Converts the chord names to their respective Symbols in chords.rb 
+    arr.map{|x|
+        display << Chords::CHORDS[x.gsub("#", "s").to_sym]
     }
-    puts " "
-    x += 1
-end
+
+    puts ""
+
+    x = 0
+
+    # Prints the  diagrams line by line, in order to have them display vertically
+    while x < 10
+        display.each{|chord|
+            print "   " + chord[x].to_s
+        }
+        puts " "
+        x += 1
+    end

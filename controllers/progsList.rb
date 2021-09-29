@@ -30,7 +30,7 @@ module ProgsList
             input = gets.chomp.strip.to_sym
 
             if MajorProgs.include? input
-                return input
+                return MajorProgs[input]
                 break
             else
                 puts "Invalid Option"
@@ -49,7 +49,7 @@ module ProgsList
             input = gets.chomp.strip.to_sym
 
             if MinorProgs.include? input
-                return input
+                return MinorProgs[input]
                 break
             else
                 puts "Invalid Option"
