@@ -33,4 +33,5 @@ class Progression
         puts "Notes in the key"
         p @chords
     end
+    
 end

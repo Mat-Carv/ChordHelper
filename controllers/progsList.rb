@@ -23,7 +23,7 @@ module ProgsList
 
     def major_option
         loop do
-            #system("clear")
+            system("clear")
             MajorProgs.each{|key, value|
             puts key.to_s + ". "+ value.to_s}
 
@@ -41,7 +41,7 @@ module ProgsList
 
     def minor_option
         loop do
-            #system("clear")
+            system("clear")
             puts "oh hi jonas"
             MinorProgs.each{|key, value|
             puts key.to_s + ". "+ value.to_s}
