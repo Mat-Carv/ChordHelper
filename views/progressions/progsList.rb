@@ -14,24 +14,48 @@ module ProgsList
                   c: ["i", "VII", "VI", "VII"],
                   d: ["i", "ii", "III", "iv", "v", "VI", "VII"]}
 
-    def choose_prog(prog)
-        if prog.key == "a"
-            #puts MajorProgs
-            MajorProgs.each{|key, value|
-            puts key.to_s + ". "+ value.to_s
-        }
-        elsif prog.key == "b"
-            #puts MinorProgs
-             MinorProgs.each{|key, value|
-             puts key.to_s + ". "+ value.to_s
-         }
+    def choose_prog(progression)
+        if progression.key == "a"
+                self.major_option
+        elsif progression.key == "b"
+                self.minor_option               
         end
-        gets.chomp.strip.to_sym
     end
 
-    def major_progs
+    def major_option
+        loop do
+            system("clear")
+            MajorProgs.each{|key, value|
+            puts key.to_s + ". "+ value.to_s}
 
+            input = gets.chomp.strip.to_sym
+
+            if MajorProgs.include? input
+                return input
+                break
+            else
+                puts "Invalid Option"
+                gets
+            end
+        end
     end
 
+    def minor_option
+        loop do
+            system("clear")
+            MinorProgs.each{|key, value|
+            puts key.to_s + ". "+ value.to_s}
+            
+            input = gets.chomp.strip.to_sym
+
+            if MinorProgs.include? input
+                return input
+                break
+            else
+                puts "Invalid Option"
+                gets
+            end
+        end
+    end
 
 end

@@ -8,12 +8,14 @@ include ProgsList
 
 module Views
     module Progressions
-        def self.new(prog)
+        def self.new(progression)
             puts "New Chord Progression"
             puts ""
-            prog.key_type = Keys.choose_key
-            prog.root = Roots.choose_root
-            prog.prog = ProgsList.choose_prog prog
+            progression.key_type = Keys.choose_key
+            progression.root = Roots.choose_root
+            progression.prog = ProgsList.choose_prog progression
+
+            #call method that will display chords
         end
 
     end
