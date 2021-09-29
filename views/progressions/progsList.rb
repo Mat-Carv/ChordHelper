@@ -1,7 +1,6 @@
 require "./models/progression"
 require "./controllers/progressions_controller"
 
-
 module ProgsList
 
     MajorProgs = {a: ["I", "V", "vi", "IV"], 
@@ -14,17 +13,17 @@ module ProgsList
                   c: ["i", "VII", "VI", "VII"],
                   d: ["i", "ii", "III", "iv", "v", "VI", "VII"]}
 
-    def choose_prog(progression)
-        if progression.key == "a"
+    def choose_prog(inst)
+        if inst.key_type == "a"
                 self.major_option
-        elsif progression.key == "b"
+        elsif inst.key_type == "b"
                 self.minor_option               
         end
     end
 
     def major_option
         loop do
-            system("clear")
+            #system("clear")
             MajorProgs.each{|key, value|
             puts key.to_s + ". "+ value.to_s}
 
@@ -42,7 +41,8 @@ module ProgsList
 
     def minor_option
         loop do
-            system("clear")
+            #system("clear")
+            puts "oh hi jonas"
             MinorProgs.each{|key, value|
             puts key.to_s + ". "+ value.to_s}
             

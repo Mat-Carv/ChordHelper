@@ -1,21 +1,21 @@
 require "./views/progressions/keys"
-require "./views/progressions/roots"
+require "./views/progressions/notes"
 require "./views/progressions/progsList"
 
 include Keys
-include Roots
+include Notes
 include ProgsList
 
 module Views
     module Progressions
-        def self.new(progression)
+        def self.new(inst)
+            system("clear")
             puts "New Chord Progression"
             puts ""
-            progression.key_type = Keys.choose_key
-            progression.root = Roots.choose_root
-            progression.prog = ProgsList.choose_prog progression
-
-            #call method that will display chords
+            inst.key_type = Keys.choose_key
+            inst.root = Notes.choose_root
+            inst.prog = ProgsList.choose_prog inst
+            puts Notes.define_notes inst
         end
 
     end

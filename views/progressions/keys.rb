@@ -1,7 +1,7 @@
 module Keys
     def choose_key
         loop do
-            system("clear")
+            #system("clear")
             puts "Choose a Key type"
             puts "a. Major Key"
             puts "b. Minor Key" 
