@@ -7,7 +7,7 @@ module Views
     module Progressions
         def self.show(inst)
             headers = %w[Atrribute Value]
-            attrs = attribute_rows_for recipe
+            attrs = attribute_rows_for inst
             table = TTY::Table.new headers, attrs
             puts table.render :ascii
             puts ""

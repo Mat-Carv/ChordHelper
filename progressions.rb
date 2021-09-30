@@ -1,4 +1,6 @@
+#!/usr/bin/env ruby
 
+# Router/Dispatch
 
 require "./controllers/progressions_controller"
 progs_controller = ProgressionsController.new   
@@ -11,9 +13,13 @@ begin
 
     case command
     # when 'list', 'l'
-    #     recipes_controller.index
-    #when 'show', 's'
-    #   progs_controller.show param
+    #     progs_controller.index
+    #     puts "Press enter to return to Menu"
+    #     gets
+    when 'show', 's'
+        progs_controller.show param
+        puts "Press enter to return to Menu"
+        gets
     when 'new', 'n'
         progs_controller.new
         puts "Press enter to return to Menu"

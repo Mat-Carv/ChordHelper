@@ -1,6 +1,9 @@
+require_relative "./active_record"
+require_relative "./log"
 
+class Progression < ActiveRecord
+    include Log
 
-class Progression
     attr_reader :key_type, :root, :prog, :chords
 
     def initialize(key_type: "", root: "", prog: "")
@@ -34,4 +37,8 @@ class Progression
         p @chords
     end
     
+    def save
+        super
+        log "Persisted Progression:#{@id}"
+    end
 end

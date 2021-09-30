@@ -1,0 +1,13 @@
+---
+- !ruby/object:Log::Log
+  message: Sumologic -> Persisted Recipe:1
+  id: 1
+- !ruby/object:Log::Log
+  message: Sumologic -> Persisted Recipe:2
+  id: 2
+- !ruby/object:Log::Log
+  message: Sumologic -> Persisted Recipe:3
+  id: 3
+- !ruby/object:Log::Log
+  message: Sumologic -> Persisted Recipe:4
+  id: 4
