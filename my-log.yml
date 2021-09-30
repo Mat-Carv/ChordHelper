@@ -32,3 +32,9 @@
 - !ruby/object:Log::Log
   message: Sumologic -> Persisted Progression:2
   id: 11
+- !ruby/object:Log::Log
+  message: Sumologic -> Persisted Progression:3
+  id: 12
+- !ruby/object:Log::Log
+  message: Sumologic -> Persisted Progression:4
+  id: 13

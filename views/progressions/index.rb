@@ -9,7 +9,7 @@ module Views
 
             puts "Chord Progressions"
 
-            headers = %w[ID KeyType Root Progression Chords]
+            headers = %w[ID Key Progression Chords]
             rows = table_rows_for list
             table = TTY::Table.new headers, rows
             puts table.render(:ascii)
@@ -17,7 +17,7 @@ module Views
 
         def self.table_rows_for(list)
             list.map do |inst|
-                [inst.id, inst.major_or_minor, inst.root, inst.prog, inst.chords]
+                [inst.id, inst.root + inst.major_or_minor, inst.prog, inst.chords]
             end
         end
 

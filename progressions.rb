@@ -26,6 +26,7 @@ begin
         puts "Press enter to return to Menu"
         gets
     when 'delete', 'd'
-        progs_controller.destroy param
+        progs_controller.index
+        progs_controller.destroy
     end
 end until ['quit', 'q'].include? command

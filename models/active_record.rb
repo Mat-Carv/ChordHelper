@@ -26,6 +26,11 @@ class ActiveRecord
         record
     end
 
+    def save
+        self.class.save(self) { |id| @id = id }
+        self
+    end
+
     def self.save(record)
 
         new_id = self.db.length + 1
@@ -38,9 +43,8 @@ class ActiveRecord
         end
     end
 
-    def save
-        self.class.save(self) { |id| @id = id }
-        self
+    def destroy
+        self.class.destroy(self)
     end
 
     def self.destroy(record)
@@ -54,7 +58,4 @@ class ActiveRecord
         end
     end
 
-    def destroy
-        self.class.destroy(self)
-    end
 end

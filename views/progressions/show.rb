@@ -7,7 +7,7 @@ module Views
     module Progressions
         def self.show(inst)
             system("clear")
-            headers = %w[Atrribute Value]
+            headers = %w[Components Details]
             attrs = attribute_rows_for inst
             table = TTY::Table.new headers, attrs
             puts table.render :ascii
@@ -18,8 +18,8 @@ module Views
 
         def self.attribute_rows_for(inst)
             rows = []
-            rows << ['Key type', inst.key_type]
-            rows << ['Root', inst.root]
+            rows << ['Key', inst.root + inst.major_or_minor]
+            # rows << ['Root', ]
             rows << ['Intervals', inst.prog]
             rows << ['Chords', inst.chords]
         end
