@@ -6,6 +6,7 @@ include ChordFetcher
 module Views
     module Progressions
         def self.show(inst)
+            system("clear")
             headers = %w[Atrribute Value]
             attrs = attribute_rows_for inst
             table = TTY::Table.new headers, attrs

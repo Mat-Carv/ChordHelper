@@ -1,6 +1,7 @@
 require 'yaml'
 
 class ActiveRecord
+    class RecordNotFound < StandardError; end
 
     attr_reader :id
 

@@ -67,3 +67,17 @@
   - C
   - G
   id: 4
+- !ruby/object:Progression
+  key_type: a
+  root: C
+  prog:
+  - I
+  - V
+  - vi
+  - IV
+  chords:
+  - C
+  - G
+  - Am
+  - F
+  id: 5

@@ -11,3 +11,6 @@
 - !ruby/object:Log::Log
   message: Sumologic -> Persisted Recipe:4
   id: 4
+- !ruby/object:Log::Log
+  message: Sumologic -> Persisted Progression:5
+  id: 5
