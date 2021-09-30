@@ -1,16 +1,34 @@
 ---
 - !ruby/object:Log::Log
-  message: Sumologic -> Persisted Recipe:1
+  message: Sumologic -> Persisted Progression:1
   id: 1
 - !ruby/object:Log::Log
-  message: Sumologic -> Persisted Recipe:2
+  message: Sumologic -> Persisted RProgression:2
   id: 2
 - !ruby/object:Log::Log
-  message: Sumologic -> Persisted Recipe:3
+  message: Sumologic -> Persisted Progression:3
   id: 3
 - !ruby/object:Log::Log
-  message: Sumologic -> Persisted Recipe:4
+  message: Sumologic -> Persisted Progression:4
   id: 4
 - !ruby/object:Log::Log
   message: Sumologic -> Persisted Progression:5
   id: 5
+- !ruby/object:Log::Log
+  message: Sumologic -> Persisted Progression:6
+  id: 6
+- !ruby/object:Log::Log
+  message: Sumologic -> Persisted Progression:7
+  id: 7
+- !ruby/object:Log::Log
+  message: Sumologic -> Persisted Progression:7
+  id: 8
+- !ruby/object:Log::Log
+  message: Sumologic -> Persisted Progression:1
+  id: 9
+- !ruby/object:Log::Log
+  message: Sumologic -> Persisted Progression:2
+  id: 10
+- !ruby/object:Log::Log
+  message: Sumologic -> Persisted Progression:2
+  id: 11

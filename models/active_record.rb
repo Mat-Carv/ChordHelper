@@ -18,9 +18,10 @@ class ActiveRecord
     end
 
     def self.find(id)
+         
         record = self.db.detect { |r| r.id == id.to_i }
         
-        raise RecordNotFound.new(id) unless record
+        #raise RecordNotFound.new(id) unless record
 
         record
     end
@@ -46,10 +47,14 @@ class ActiveRecord
         return false if record.nil? 
 
         idx = db.index { |obj| obj.id == record.id }
-        db[idx] = nil
+        self.db.delete(db[idx])
 
         File.open(file_name, 'w') do |file|
             file.write(self.db.to_yaml)
         end
+    end
+
+    def destroy
+        self.class.destroy(self)
     end
 end

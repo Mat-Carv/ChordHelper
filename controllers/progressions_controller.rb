@@ -1,6 +1,7 @@
 require "./views/progressions/new"
 require "./views/progressions/index"
 require "./views/progressions/show"
+#require "./models/active_record"
 require "./models/progression"
 
 class ProgressionsController
@@ -23,9 +24,9 @@ class ProgressionsController
         Views::Progressions.index(progressions)
     end
 
-    # def destroy(id)
-    #     progression = Progression.find(id)
-    #     progression.destroy
-    # end
+    def destroy(id)
+        progression = Progression.find(id)
+        progression.destroy
+    end
 
 end

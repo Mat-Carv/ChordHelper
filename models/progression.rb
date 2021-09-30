@@ -4,7 +4,7 @@ require_relative "./log"
 class Progression < ActiveRecord
     include Log
 
-    attr_reader :key_type, :root, :prog, :chords
+    attr_reader :key_type, :root, :prog, :chords, :id
 
     def initialize(key_type: "", root: "", prog: "")
         self.key_type = key_type
@@ -36,9 +36,18 @@ class Progression < ActiveRecord
         puts "Notes in the key"
         p @chords
     end
+
+    def major_or_minor
+        if @key_type == "a"
+            return "Major"
+        elsif @key_type == "b"
+            return "Minor"
+        end
+    end
     
     def save
         super
         log "Persisted Progression:#{@id}"
     end
+
 end
