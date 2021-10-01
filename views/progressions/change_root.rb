@@ -10,16 +10,12 @@ include ChordFetcher
 
 module Views
     module Progressions
-        def self.new(inst)
+        def change_root(inst)
             system("clear")
             puts "New Chord Progression"
             puts ""
-
-            inst.key_type = Keys.choose_key
-            inst.prog = ProgsList.choose_prog inst
             inst.root = Notes.choose_root
-            inst.chords = Notes.define_notes inst
-            
+            inst.chords = Notes.define_notes inst    
         end
 
     end

@@ -1,6 +1,7 @@
 require "./views/progressions/new"
 require "./views/progressions/index"
 require "./views/progressions/show"
+require "./views/progressions/change_prog"
 #require "./models/active_record"
 require "./models/progression"
 
