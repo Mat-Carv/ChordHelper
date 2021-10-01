@@ -13,19 +13,20 @@ class ProgressionsController
         Views::Progressions.show progression
     end
 
+    def index
+        progressions = Progression.all.compact
+        Views::Progressions.index progressions
+    end
+
     def show
         progression = Progression.find
         Views::Progressions.show progression
-    end
-
-    def index
-        progressions = Progression.all.compact
-        Views::Progressions.index(progressions)
+        progression.save
     end
 
     def destroy      
         progression = Progression.find
-        progression.destroy
+        progression.destroy progression
     end
 
 end

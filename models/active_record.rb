@@ -20,7 +20,7 @@ class ActiveRecord
     def self.find
         print "Enter Progression ID: "
         id = gets.chomp.downcase.strip
-        
+
         record = self.db.detect { |r| r.id == id.to_i }
         
         #raise RecordNotFound.new(id) unless record
@@ -29,11 +29,17 @@ class ActiveRecord
     end
 
     def save
-        self.class.save(self) { |id| @id = id }
-        self
+        if @id == nil
+            self.class.save_new(self) { |id| @id = id }
+            self
+        else
+            self.class.save_changes(self)
+            self
+            puts "OH HI MARK"
+        end
     end
 
-    def self.save(record)
+    def self.save_new(record)
 
         new_id = self.db.length + 1
         yield(new_id)
@@ -45,8 +51,22 @@ class ActiveRecord
         end
     end
 
-    def destroy
-        self.class.destroy
+    def self.save_changes(record)
+        idx = db.index { |obj| obj.id == record.id }
+        self.db[idx] = record
+        
+        File.open(file_name, 'w') do |file|
+            file.write(self.db.to_yaml)
+        end
+    end
+
+    # Idea for making copies
+    # def self.save_changes(record)
+    #     self.db << record
+    # end
+
+    def destroy(inst)
+        self.class.destroy inst
     end
 
     def self.destroy(record)

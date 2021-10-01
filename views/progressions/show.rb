@@ -19,7 +19,6 @@ module Views
         def self.attribute_rows_for(inst)
             rows = []
             rows << ['Key', inst.root + inst.major_or_minor]
-            # rows << ['Root', ]
             rows << ['Intervals', inst.prog]
             rows << ['Chords', inst.chords]
         end

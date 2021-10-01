@@ -3,38 +3,26 @@
   message: Sumologic -> Persisted Progression:1
   id: 1
 - !ruby/object:Log::Log
-  message: Sumologic -> Persisted RProgression:2
+  message: Sumologic -> Persisted Progression:1
   id: 2
 - !ruby/object:Log::Log
-  message: Sumologic -> Persisted Progression:3
+  message: Sumologic -> Persisted Progression:2
   id: 3
 - !ruby/object:Log::Log
-  message: Sumologic -> Persisted Progression:4
+  message: Sumologic -> Persisted Progression:2
   id: 4
 - !ruby/object:Log::Log
-  message: Sumologic -> Persisted Progression:5
+  message: Sumologic -> Persisted Progression:1
   id: 5
 - !ruby/object:Log::Log
-  message: Sumologic -> Persisted Progression:6
+  message: Sumologic -> Persisted Progression:1
   id: 6
 - !ruby/object:Log::Log
-  message: Sumologic -> Persisted Progression:7
+  message: Sumologic -> Persisted Progression:1
   id: 7
 - !ruby/object:Log::Log
-  message: Sumologic -> Persisted Progression:7
+  message: Sumologic -> Persisted Progression:2
   id: 8
 - !ruby/object:Log::Log
-  message: Sumologic -> Persisted Progression:1
+  message: Sumologic -> Persisted Progression:2
   id: 9
-- !ruby/object:Log::Log
-  message: Sumologic -> Persisted Progression:2
-  id: 10
-- !ruby/object:Log::Log
-  message: Sumologic -> Persisted Progression:2
-  id: 11
-- !ruby/object:Log::Log
-  message: Sumologic -> Persisted Progression:3
-  id: 12
-- !ruby/object:Log::Log
-  message: Sumologic -> Persisted Progression:4
-  id: 13
