@@ -35,7 +35,7 @@ class ActiveRecord
         else
             self.class.save_changes(self)
             self
-            puts "OH HI MARK"
+            puts "SAVING CHANGES"
         end
     end
 
