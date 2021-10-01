@@ -14,9 +14,7 @@ class ProgressionsController
     end
 
     def show
-        print "Enter Progression ID: "
-        id = gets.chomp.downcase.strip
-        progression = Progression.find(id)
+        progression = Progression.find
         Views::Progressions.show progression
     end
 
@@ -25,10 +23,8 @@ class ProgressionsController
         Views::Progressions.index(progressions)
     end
 
-    def destroy
-        print "Enter Progression ID: "
-        id = gets.chomp.downcase.strip
-        progression = Progression.find(id)
+    def destroy      
+        progression = Progression.find
         progression.destroy
     end
 

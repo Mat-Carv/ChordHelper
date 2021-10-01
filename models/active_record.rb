@@ -17,8 +17,10 @@ class ActiveRecord
         self.db
     end
 
-    def self.find(id)
-         
+    def self.find
+        print "Enter Progression ID: "
+        id = gets.chomp.downcase.strip
+        
         record = self.db.detect { |r| r.id == id.to_i }
         
         #raise RecordNotFound.new(id) unless record
@@ -44,7 +46,7 @@ class ActiveRecord
     end
 
     def destroy
-        self.class.destroy(self)
+        self.class.destroy
     end
 
     def self.destroy(record)
