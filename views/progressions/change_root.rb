@@ -11,7 +11,7 @@ include ChordFetcher
 module Views
     module Progressions
         def change_root(inst)
-            system("clear")
+            # system("clear")
             puts "New Chord Progression"
             puts ""
             inst.root = Notes.choose_root

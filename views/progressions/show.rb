@@ -10,7 +10,7 @@ module Views
     module Progressions
         def self.change(inst)
             begin
-                system("clear")
+                # system("clear")
                 print "Change (Root, Progression): "
                 input = gets.chomp.downcase.strip.split(' ')
                 command, param = input

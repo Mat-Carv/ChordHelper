@@ -1,13 +1,16 @@
 #!/usr/bin/env ruby
 
 # Router/Dispatch
-
+require "./views/tables/tables.rb"
 require "./controllers/progressions_controller"
+
+include Tables
+
 progs_controller = ProgressionsController.new   
 
 begin
     system("clear")
-    print "Enter a command (list, show, new, delete, quit): "
+    Tables.main_menu
     input = gets.chomp.downcase.strip.split(' ')
     command, param = input
 
