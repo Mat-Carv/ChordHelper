@@ -40,8 +40,12 @@ class ActiveRecord
     end
 
     def self.save_new(record)
+        if self.db.empty?
+            new_id = 1
+        else
+            new_id = self.existing_ids + 1
+        end
 
-        new_id = self.db.length + 1
         yield(new_id)
 
         self.db << record
@@ -51,8 +55,14 @@ class ActiveRecord
         end
     end
 
+    def self.existing_ids
+        all_ids = []
+        self.db.each{|inst| all_ids << inst.id}
+        all_ids.max
+    end
+
     def self.save_changes(record)
-        idx = db.index { |obj| obj.id == record.id }
+        idx = db.index { |inst| inst.id == record.id }
         self.db[idx] = record
         
         File.open(file_name, 'w') do |file|

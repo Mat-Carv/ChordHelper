@@ -13,9 +13,8 @@ module Views
     module Progressions
 
         def self.show(inst)
-            system("clear")
-            self.display inst 
             self.menu_show inst
+            self.save_prompt inst
         end
 
         def self.display(inst)
@@ -39,7 +38,9 @@ module Views
 
         def self.menu_show(inst)
             begin
-                
+                system("clear")
+                self.display inst
+
                 puts "- To Edit Progression, type 'e'"
                 puts "- To Quit, type 'q'"
                 input = gets.chomp.downcase.strip
@@ -50,7 +51,6 @@ module Views
                 end
 
             end until ['quit', 'q'].include? input
-            self.save_prompt inst
         end
 
         def self.save_prompt(inst)
