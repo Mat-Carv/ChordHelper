@@ -38,20 +38,18 @@ module Views
         end
 
         def self.menu_show(inst)
-            begin #keeps adding lines unless e or q, fix later
+            begin
+                
                 puts "- To Edit Progression, type 'e'"
                 puts "- To Quit, type 'q'"
-                input = gets.chomp.downcase.strip.split(' ')
-                command, param = input
-              
-                 
-                if command == "edit" || command == "e"
+                input = gets.chomp.downcase.strip
+                           
+                if input == "edit" || input == "e"
                     self.change inst
                     break
                 end
 
-                #find a way to loop the show/menu
-            end until ['quit', 'q'].include? command
+            end until ['quit', 'q'].include? input
             self.save_prompt inst
         end
 
@@ -76,17 +74,19 @@ module Views
                 system("clear")
                 
                 self.display inst
+
                 Tables.edit_menu
-                input = gets.chomp.downcase.strip.split(' ')
-                command, param = input
+
+                input = gets.chomp.downcase.strip
             
-                case command
+                case input
                 when 'root', 'r'
                     Views::Progressions.change_root inst
                 when 'progression', 'p'
                     Views::Progressions.change_prog inst
                 end
-            end until ['quit', 'q'].include? command
+
+            end until ['quit', 'q'].include? input
         end
     end
 end

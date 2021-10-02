@@ -10,7 +10,6 @@ class ProgressionsController
     def new
         progression = Progression.new
         Views::Progressions.new progression
-        # progression.save
         Views::Progressions.show progression
     end
 
@@ -22,7 +21,6 @@ class ProgressionsController
     def show
         progression = Progression.find
         Views::Progressions.show progression
-
     end
 
     def destroy      

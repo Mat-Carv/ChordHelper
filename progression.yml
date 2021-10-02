@@ -1,41 +1,21 @@
 ---
 - !ruby/object:Progression
   key_type: a
-  root: G
-  prog:
-  - I
-  - ii
-  - iii
-  - IV
-  - V
-  - vi
-  - vii
-  chords:
-  - G
-  - Am
-  - Bm
-  - C
-  - D
-  - Em
-  - F#m
-  id: 1
-- !ruby/object:Progression
-  key_type: a
   root: C
   prog:
-  - I
-  - V
   - vi
   - IV
+  - I
+  - V
   chords:
-  - C
-  - G
   - Am
   - F
-  id: 3
+  - C
+  - G
+  id: 1
 - !ruby/object:Progression
   key_type: b
-  root: F
+  root: D#
   prog:
   - i
   - ii
@@ -45,31 +25,11 @@
   - VI
   - VII
   chords:
+  - D#m
   - Fm
-  - Gm
-  - G#
-  - A#m
-  - Cm
-  - C#
-  - D#
-  id: 3
-- !ruby/object:Progression
-  key_type: a
-  root: F#
-  prog:
-  - I
-  - ii
-  - iii
-  - IV
-  - V
-  - vi
-  - vii
-  chords:
   - F#
   - G#m
   - A#m
   - B
   - C#
-  - D#m
-  - Fm
-  id: 4
+  id: 2
