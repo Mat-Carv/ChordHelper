@@ -22,12 +22,12 @@ begin
     when 'show', 's'
         progs_controller.index
         progs_controller.show
-        puts "Press enter to return to Menu"
-        gets
+        #puts "Press enter to return to Menu"
+        #gets
     when 'new', 'n'
         progs_controller.new
-        puts "Press enter to return to Menu"
-        gets
+        #puts "Press enter to return to Menu"
+        #gets
     when 'delete', 'd'
         progs_controller.index
         progs_controller.destroy

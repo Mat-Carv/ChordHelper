@@ -2,6 +2,7 @@ require 'tty-table'
 require "./controllers/chord_fetcher"
 require "./views/progressions/change_root"
 require "./views/progressions/change_prog"
+require "./models/progression"
 
 include ChordFetcher
 include Views::Progressions
@@ -39,16 +40,31 @@ module Views
                 input = gets.chomp.downcase.strip.split(' ')
                 command, param = input
               
-                case command 
-                when "edit", "e"
+                 
+                if command == "edit" || command == "e"
                     self.change inst
-                when "save", "s"
-                    #add save option
+                    break
                 end
 
                 #find a way to loop the show/menu
             end until ['quit', 'q'].include? command
-            # Or add save option here
+            self.save_prompt inst
+        end
+
+        def self.save_prompt(inst)
+            l = true
+            while l == true
+                system("clear")
+                puts "Save Changes? (y/n)"
+                input =  gets.chomp.downcase.strip
+
+                if input == "y"
+                    inst.save
+                    l = false
+                elsif input == "n"
+                    l = false
+                end
+            end
         end
 
         def self.change(inst)
@@ -61,6 +77,7 @@ module Views
                 case command
                 when 'root', 'r'
                     Views::Progressions.change_root inst
+                    #self.menu_show(inst)
                     puts "Press enter to return to Menu"
                     gets
                 when 'progression', 'p'
