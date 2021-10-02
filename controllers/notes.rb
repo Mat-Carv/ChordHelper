@@ -9,7 +9,7 @@ module Notes
             #system("clear")
             puts "Choose a Root Note: "
             puts ""
-            puts NotesArr.to_s
+            puts ["A","A#","B","C","C#","D","D#","E","F","F#","G","G#"].to_s
             puts ""
             input = gets.chomp.upcase.strip
 
