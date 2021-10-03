@@ -78,18 +78,19 @@ module Views
                 Tables.edit_menu
 
                 input = gets.chomp.downcase.strip
-            
-                puts "Edit Chord Progression"
-                puts ""
 
                 case input
                 when 'root', 'r'
                     system("clear")
                     self.display inst
+                    puts "Edit Chord Progression"
+                    puts ""
                     Views::Progressions.change_root inst
                 when 'progression', 'p'
                     system("clear")
                     self.display inst
+                    puts "Edit Chord Progression"
+                    puts ""
                     Views::Progressions.change_prog inst
                 end
 
