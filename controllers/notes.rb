@@ -6,7 +6,6 @@ module Notes
     
     def choose_root
         loop do
-            #system("clear")
             puts "Choose a Root Note: "
             puts ""
             puts ["A","A#","B","C","C#","D","D#","E","F","F#","G","G#"].to_s

@@ -4,8 +4,11 @@ module Views
     module Progressions
         def self.index(list)
             system("clear")
-            
-            return puts "No Progressions Found" if list.empty?
+            if list.empty?
+                puts "No Progressions Found!  Press Enter to continue."
+                gets
+                return nil
+            end
 
             puts "Chord Progressions"
 
@@ -13,6 +16,9 @@ module Views
             rows = table_rows_for list
             table = TTY::Table.new headers, rows
             puts table.render(:ascii)
+            # puts "Press Enter to continue."
+            # gets
+            return true
         end
 
         def self.table_rows_for(list)

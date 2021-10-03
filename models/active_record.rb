@@ -1,7 +1,6 @@
 require 'yaml'
 
 class ActiveRecord
-    class RecordNotFound < StandardError; end
 
     attr_reader :id
 
@@ -18,14 +17,15 @@ class ActiveRecord
     end
 
     def self.find
-        print "Enter Progression ID: "
+        puts "Enter Progression ID, or type 'q' to Quit."
         id = gets.chomp.downcase.strip
 
-        record = self.db.detect { |r| r.id == id.to_i }
-        
-        #raise RecordNotFound.new(id) unless record
-
-        record
+        if id == "q" || id == "quit"
+            return nil
+        else
+            record = self.db.detect { |r| r.id == id.to_i }
+            record
+        end
     end
 
     def save

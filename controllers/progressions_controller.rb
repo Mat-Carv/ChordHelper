@@ -2,7 +2,6 @@ require "./views/progressions/new"
 require "./views/progressions/index"
 require "./views/progressions/show"
 require "./views/progressions/change_prog"
-#require "./models/active_record"
 require "./models/progression"
 
 class ProgressionsController
@@ -20,12 +19,17 @@ class ProgressionsController
 
     def show
         progression = Progression.find
-        Views::Progressions.show progression
+        if progression != nil
+            Views::Progressions.show progression
+        end
     end
 
     def destroy      
         progression = Progression.find
-        progression.destroy progression
+        if progression != nil
+            progression.destroy progression
+        end
+        
     end
 
 end

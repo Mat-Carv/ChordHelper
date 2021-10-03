@@ -79,13 +79,25 @@ module Views
 
                 input = gets.chomp.downcase.strip
             
+                puts "Edit Chord Progression"
+                puts ""
+
                 case input
                 when 'root', 'r'
+                    system("clear")
+                    self.display inst
                     Views::Progressions.change_root inst
                 when 'progression', 'p'
+                    system("clear")
+                    self.display inst
                     Views::Progressions.change_prog inst
                 end
 
+            rescue StandardError
+                puts "An Error Ocurred"
+                gets
+            retry
+        
             end until ['quit', 'q'].include? input
         end
     end
