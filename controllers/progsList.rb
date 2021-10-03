@@ -6,12 +6,20 @@ module ProgsList
     MajorProgs = {a: ["I", "V", "vi", "IV"], 
                   b: ["V", "vi", "IV", "I"],
                   c: ["vi", "IV", "I", "V"],
-                  d: ["I", "ii", "iii", "IV", "V", "vi", "vii"]}
+                  d: ["I", "vi", "IV", "V"],
+                  e: ["I", "vi", "ii", "V"],
+                  f: ["I", "IV", "ii", "V"],
+                  g: ["ii", "V", "I", "I"],
+                  h: ["I", "ii", "iii", "IV", "V", "vi", "vii"]}
 
     MinorProgs = {a: ["i", "VI", "III", "VII"], 
                   b: ["VI", "VII", "i" , "i" ],
                   c: ["i", "VII", "VI", "VII"],
-                  d: ["i", "ii", "III", "iv", "v", "VI", "VII"]}
+                  d: ["i", "III", "VII", "VI"],
+                  e: ["i", "VI", "iv", "VII"],
+                  f: ["i", "v", "iv", "VII"],
+                  g: ["i", "v", "VII", "iv"],
+                  h: ["i", "ii", "III", "iv", "v", "VI", "VII"]}
 
     def choose_prog(inst)
         puts "Choose a Progression"
